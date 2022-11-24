@@ -1,0 +1,16 @@
+image:
+  file: .gitpod.dockerfile
+tasks:
+  - name: Install Dependencies
+    command: |
+      conan config set storage.path=$(pwd)/packages
+      conan profile update settings.compiler.libcxx=libstdc++11 default
+      mkdir build
+      cd build
+      conan install ..
+
+ports:
+  - port: 5900
+    onOpen: ignore
+  - port: 6080
+    onOpen: open-browser
