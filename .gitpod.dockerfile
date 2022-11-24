@@ -6,9 +6,7 @@ RUN \
 	&& sudo apt-get upgrade -y \
 	# Install useful programs (APT)
 	&& sudo apt-get install -y \
-		libgl-dev \
-		libgtk-4-dev \
-		libgtkmm-4.0-dev \
+		libgl-dev 
 		python3 \
 	# IDK
 	&& sudo apt-get clean && sudo rm -rf /var/cache/apt/* && sudo rm -rf /var/lib/apt/lists/* && sudo rm -rf /tmp/* \
